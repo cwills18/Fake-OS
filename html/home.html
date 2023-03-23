@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link rel="stylesheet" href="./../css/home.css" />
+		<script
+			type="javascript/text"
+			href="./../javascript/script.js"
+		></script>
+		<title>Fake OS</title>
+	</head>
+	<body onload="updateTime()">
+		<main>
+			<div class="top-row">
+				<p>📶 Optus</p>
+				<span class="top-row__time" id="time"></span>
+				<p>100% &#128267;</p>
+			</div>
+			<p>This is the home page</p>
+		</main>
+		<div class="home-bar">
+			<p class="home-bar__arrows">&#8594;</p>
+			<a class="home-bar__link" href="html/home.html"
+				><div class="home-bar__btn"></div
+			></a>
+			<p class="home-bar__arrows">←</p>
+		</div>
+		<script>
+			const updateTime = () => {
+				const timeDisplay = document.getElementById("time");
+				let time = new Date().toString();
+				time = time.substring(16, 21);
+				timeDisplay.textContent = time;
+			};
+		</script>
+	</body>
+</html>

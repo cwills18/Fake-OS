@@ -1,0 +1,138 @@
+body, main, .top-row, .date-and-time, .home-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+/* Fonts */
+@keyframes moving-arrows--left {
+  0% {
+    left: 0em;
+  }
+  50% {
+    left: 1em;
+  }
+  100% {
+    left: 0em;
+  }
+}
+@keyframes moving-arrows--right {
+  0% {
+    right: 0em;
+  }
+  50% {
+    right: 1em;
+  }
+  100% {
+    right: 0em;
+  }
+}
+@keyframes border-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+body {
+  width: 100%;
+  background-color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+main {
+  background-color: white;
+  justify-content: space-between;
+  width: 98%;
+  position: fixed;
+  top: 1%;
+  bottom: 4em;
+}
+
+.top-row {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.top-row p {
+  margin: 0em 0.3em;
+}
+
+.date-and-time {
+  position: absolute;
+  top: 5em;
+}
+.date-and-time__date {
+  font-size: 1.5em;
+}
+.date-and-time__time {
+  font-size: 5em;
+}
+
+.bottom-text {
+  margin-bottom: 0.5em;
+}
+
+.home-bar {
+  align-self: flex-end;
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  height: 4em;
+  display: grid;
+  grid-template-columns: 4em 4em 4em;
+}
+.home-bar__link {
+  z-index: 1;
+  display: flex;
+  margin: auto;
+  grid-column-start: 2;
+  background-image: conic-gradient(black, white);
+  background-size: 100% 100%, cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation-name: border-spin;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+.home-bar__btn {
+  z-index: 2;
+  grid-column-start: 2;
+  margin: auto;
+  background-color: black;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.home-bar__arrows {
+  z-index: 3;
+  color: white;
+  font-size: 1.5em;
+  position: relative;
+}
+.home-bar__arrows--left {
+  grid-column-start: 1;
+  animation-name: moving-arrows--left;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.home-bar__arrows--right {
+  grid-column-start: 3;
+  animation-name: moving-arrows--right;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}

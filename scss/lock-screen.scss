@@ -1,0 +1,139 @@
+@use "defaults.scss";
+@import "themes.scss";
+
+$btn-border: 3px;
+
+@keyframes moving-arrows--left {
+	0% {
+		left: 0em;
+	}
+	50% {
+		left: 1em;
+	}
+	100% {
+		left: 0em;
+	}
+}
+@keyframes moving-arrows--right {
+	0% {
+		right: 0em;
+	}
+	50% {
+		right: 1em;
+	}
+	100% {
+		right: 0em;
+	}
+}
+@keyframes border-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+body {
+	@extend %default-display;
+	width: 100%;
+	background-color: black;
+	font-family: $default;
+}
+
+main {
+	@extend %default-display;
+	background-color: white;
+	justify-content: space-between;
+	// border: 0.5em solid black;
+	width: 98%;
+	// height: 100vh;
+	position: fixed;
+	top: 1%;
+	bottom: 4em;
+}
+.top-row {
+	@extend %default-display;
+	flex-direction: row;
+	justify-content: space-between;
+	& p {
+		margin: 0em 0.3em;
+	}
+}
+
+.date-and-time {
+	@extend%default-display;
+	position: absolute;
+	top: 5em;
+	&__date {
+		font-size: 1.5em;
+	}
+	&__time {
+		font-size: 5em;
+	}
+}
+
+.bottom-text {
+	margin-bottom: 0.5em;
+}
+
+.home-bar {
+	@extend %default-display;
+	align-self: flex-end;
+	width: 100%;
+	background-color: black;
+	position: fixed;
+	bottom: 0;
+	height: 4em;
+	display: grid;
+	grid-template-columns: 4em 4em 4em;
+	&__link {
+		z-index: 1;
+		display: flex;
+		margin: auto;
+		grid-column-start: 2;
+		background-image: conic-gradient(black, white);
+		background-size: 100% 100%, cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		animation-name: border-spin;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+	}
+	&__btn {
+		z-index: 2;
+		grid-column-start: 2;
+		margin: auto;
+		background-color: black;
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+	}
+	&__arrows {
+		z-index: 3;
+		color: white;
+		font-size: 1.5em;
+		position: relative;
+		&--left {
+			grid-column-start: 1;
+			animation-name: moving-arrows--left;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+		}
+		&--right {
+			grid-column-start: 3;
+			animation-name: moving-arrows--right;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+		}
+	}
+}
