@@ -1,6 +1,56 @@
 @use "defaults.scss";
 @import "themes.scss";
 
+@keyframes moving-arrows--left {
+	0% {
+		left: 0em;
+	}
+	50% {
+		left: 1em;
+	}
+	100% {
+		left: 0em;
+	}
+}
+@keyframes moving-arrows--right {
+	0% {
+		right: 0em;
+	}
+	50% {
+		right: 1em;
+	}
+	100% {
+		right: 0em;
+	}
+}
+
+@keyframes openModal {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes openModalContent {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes closeModal {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -16,46 +66,187 @@ body {
 
 main {
 	@extend %default-display;
-	background-color: white;
+	background: linear-gradient(white, #d18de4, #6f2fad);
 	justify-content: space-between;
-	// border: 0.5em solid black;
 	width: 98%;
-	// height: 100vh;
 	position: fixed;
 	top: 1%;
 	bottom: 4em;
 }
-.top-row {
+
+.top-display {
 	@extend %default-display;
-	flex-direction: row;
-	justify-content: space-between;
-	& p {
-		margin: 0em 0.3em;
+	height: 75%;
+	justify-content: flex-start;
+	&__top-row {
+		@extend %default-display;
+		flex-direction: row;
+		justify-content: space-between;
+		& p {
+			margin: 0em 0.3em;
+		}
 	}
-	&__time {
+}
+
+.date-and-time {
+	color: black;
+	&__date {
+		display: none;
+	}
+}
+
+.bottom-display {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 100%;
+	height: 25%;
+}
+
+.app-grid {
+	@extend %default-display;
+	flex-flow: row wrap;
+	&--main {
+		margin-top: 0px;
+		align-self: flex-start;
+	}
+	&--bottom {
+		background-color: rgba(255, 255, 255, 0.5);
+		align-self: flex-end;
+		padding-bottom: 0.5em;
+	}
+	&__app {
+		@extend %default-display;
+		align-self: flex-start;
+		width: 25%;
+	}
+	&__icon {
+		width: 100%;
+		max-width: 350px;
+	}
+	&__label {
+		margin-top: -0.5em;
+		font-size: 1em;
+	}
+}
+
+.icons-8-reference {
+	font-size: 0.8em;
+	margin-bottom: 1em;
+	& a {
 		color: black;
-		top: 0;
+		&:hover {
+			color: white;
+		}
 	}
 }
 
 .home-bar {
 	@extend %default-display;
-	flex-direction: row;
 	align-self: flex-end;
-	justify-content: space-evenly;
-	background-color: black;
 	width: 100%;
+	background-color: black;
 	position: fixed;
 	bottom: 0;
 	height: 4em;
-	&__btn {
+	display: grid;
+	grid-template-columns: 4em 4em 4em;
+	&__link {
+		border: 2px solid grey;
+		z-index: 1;
+		display: flex;
+		margin: auto;
+		grid-column-start: 2;
+		grid-row-start: 1;
+		/* 		background-image: conic-gradient(black, white);
+		background-size: 100% 100%, cover;
+		background-position: center center;
+		background-repeat: no-repeat; */
+		border-radius: 50%;
 		width: 50px;
 		height: 50px;
-		border: 2px solid rgb(62, 62, 62);
+		/* 		animation-name: border-spin;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite; */
+	}
+	&__btn {
+		z-index: 2;
+		grid-column-start: 2;
+		grid-row-start: 1;
+		margin: auto;
+		background-color: black;
+		width: 45px;
+		height: 45px;
 		border-radius: 50%;
 	}
-	&__arrows {
+	&__arrows--left {
+		z-index: 3;
 		color: white;
 		font-size: 1.5em;
+		position: relative;
+		grid-column-start: 1;
+		animation-name: moving-arrows--left;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+	}
+	&__arrows--right {
+		z-index: 3;
+		color: white;
+		font-size: 1.5em;
+		position: relative;
+		grid-column-start: 3;
+		animation-name: moving-arrows--right;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+	}
+}
+
+.app-modal {
+	display: none;
+}
+
+.open-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 0;
+	transform: scale(1);
+	background: white;
+	animation: openModal 0.25s linear;
+	& p {
+		z-index: 1;
+		animation: openModalContent 0.25s linear;
+	}
+}
+
+.close-modal {
+	display: none;
+	animation: closeModal 0.25s linear;
+	& p {
+		display: none;
+	}
+}
+
+.weather {
+	@extend %default-display;
+	margin: auto;
+	background-color: rgb(197, 233, 248);
+	&__location {
+		font-size: 2em;
+	}
+	&__temp {
+		font-size: 4em;
+		margin-bottom: 0.5em;
+	}
+	&__pic {
+		font-size: 8em;
+		margin-bottom: 0.5em;
+	}
+	&__description {
+		font-size: 2em;
+		margin-bottom: 3em;
 	}
 }

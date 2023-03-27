@@ -8,35 +8,111 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<link rel="stylesheet" href="./../css/home.css" />
-		<script
-			type="javascript/text"
-			href="./../javascript/script.js"
-		></script>
+		<script src="./../javascript/script.js" defer></script>
 		<title>Fake OS</title>
 	</head>
-	<body onload="updateTime()">
+	<body>
 		<main>
-			<div class="top-row">
-				<p>📶 Optus</p>
-				<span class="top-row__time" id="time"></span>
-				<p>100% &#128267;</p>
+			<div class="top-display">
+				<div class="top-display__top-row">
+					<p>📶 Optus</p>
+					<span class="date-and-time__time"></span>
+					<span class="date-and-time__date"></span>
+					<p>100% &#128267;</p>
+				</div>
+				<div class="app-grid app-grid--main">
+					<div class="app-grid__app">
+						<img
+							class="app-grid__icon"
+							src="./../assets/icons8-notes.svg"
+						/>
+						<p class="app-grid__label">Notes</p>
+					</div>
+					<div class="app-grid__app" id="weather">
+						<img
+							class="app-grid__icon"
+							src="./../assets/icons8-weather.svg"
+						/>
+						<p class="app-grid__label">Weather</p>
+					</div>
+					<section class="app-modal weather">
+						<p class="weather__location">Antartica</p>
+						<p class="weather__temp">-30°C</p>
+						<p class="weather__pic">🌨️</p>
+						<p class="weather__description">Snowy</p>
+					</section>
+					<div class="app-grid__app">
+						<img
+							class="app-grid__icon"
+							src="./../assets/icons8-clock.svg"
+						/>
+						<p class="app-grid__label">Clock</p>
+					</div>
+					<div class="app-grid__app">
+						<img
+							class="app-grid__icon"
+							src="./../assets/icons8-photos.svg"
+						/>
+						<p class="app-grid__label">Photos</p>
+					</div>
+				</div>
 			</div>
-			<p>This is the home page</p>
+			<div class="bottom-display">
+				<div class="icons-8-reference">
+					Icons courtesy of
+					<a href="https://icons8.com/">Icons8</a>
+				</div>
+				<div class="app-grid app-grid--bottom">
+					<div class="app-grid__app">
+						<img
+							class="app-grid__icon"
+							src="./../assets/icons8-phone.svg"
+						/>
+						<p class="app-grid__label">Phone</p>
+					</div>
+					<section class="app-modal phone">
+						<li>1</li>
+						<li>3</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+						<li>6</li>
+						<li>7</li>
+						<li>8</li>
+						<li>9</li>
+						<li>*</li>
+						<li>0</li>
+						<li>#</li>
+						<li>📞</li>
+					</section>
+					<div class="app-grid__app">
+						<img
+							class="app-grid__icon"
+							src="./../assets/icons8-messages.svg"
+						/>
+						<p class="app-grid__label">Messages</p>
+					</div>
+					<div class="app-grid__app">
+						<img
+							class="app-grid__icon"
+							src="./../assets/icons8-calculator.svg"
+						/>
+						<p class="app-grid__label">Calculator</p>
+					</div>
+					<div class="app-grid__app">
+						<img
+							class="app-grid__icon"
+							src="./../assets/icons8-settings.svg"
+						/>
+						<p class="app-grid__label">Settings</p>
+					</div>
+				</div>
+			</div>
 		</main>
 		<div class="home-bar">
-			<p class="home-bar__arrows">&#8594;</p>
-			<a class="home-bar__link" href="html/home.html"
-				><div class="home-bar__btn"></div
-			></a>
-			<p class="home-bar__arrows">←</p>
+			<div class="home-bar__link">
+				<div class="home-bar__btn"></div>
+			</div>
 		</div>
-		<script>
-			const updateTime = () => {
-				const timeDisplay = document.getElementById("time");
-				let time = new Date().toString();
-				time = time.substring(16, 21);
-				timeDisplay.textContent = time;
-			};
-		</script>
 	</body>
 </html>
