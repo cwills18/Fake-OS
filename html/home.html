@@ -3,12 +3,13 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./../css/home.css" />
-		<script src="./../javascript/script.js" defer></script>
+		<script type="module" src="./../javascript/DOM-interactions.js" defer></script>
+		<script type="module" src="./../javascript/DOM-supporter-functions.js" defer></script>
+		<script type="module" src="./../javascript/arrow-animations.js" defer></script>
+		<script type="module" src="./../javascript/apps/phone-app.js" defer></script>
+		<script src="./../javascript/date-and-time.js" defer></script>
 		<title>Fake OS</title>
 	</head>
 	<body>
@@ -21,40 +22,111 @@
 					<p>100% &#128267;</p>
 				</div>
 				<div class="app-grid app-grid--main">
-					<div class="app-grid__app">
-						<img
-							class="app-grid__icon"
-							src="./../assets/icons8-notes.svg"
-						/>
+					<div class="app-grid__app" id="notes">
+						<img class="app-grid__icon" src="./../assets/icons8-notes.svg" />
 						<p class="app-grid__label">Notes</p>
 					</div>
 					<div class="app-grid__app" id="weather">
-						<img
-							class="app-grid__icon"
-							src="./../assets/icons8-weather.svg"
-						/>
+						<img class="app-grid__icon" src="./../assets/icons8-weather.svg" />
 						<p class="app-grid__label">Weather</p>
 					</div>
-					<section class="app-modal weather">
+					<div class="app-grid__app" id="clock">
+						<img class="app-grid__icon" src="./../assets/icons8-clock.svg" />
+						<p class="app-grid__label">Clock</p>
+					</div>
+					<div class="app-grid__app" id="photos">
+						<img class="app-grid__icon" src="./../assets/icons8-photos.svg" />
+						<p class="app-grid__label">Photos</p>
+					</div>
+				</div>
+				<div class="modals">
+					<section class="app-modal notes" id="notesModal">
+						<p>Boilerplate text</p>
+					</section>
+					<section class="app-modal weather" id="weatherModal">
 						<p class="weather__location">Antartica</p>
 						<p class="weather__temp">-30°C</p>
 						<p class="weather__pic">🌨️</p>
 						<p class="weather__description">Snowy</p>
 					</section>
-					<div class="app-grid__app">
-						<img
-							class="app-grid__icon"
-							src="./../assets/icons8-clock.svg"
-						/>
-						<p class="app-grid__label">Clock</p>
-					</div>
-					<div class="app-grid__app">
-						<img
-							class="app-grid__icon"
-							src="./../assets/icons8-photos.svg"
-						/>
-						<p class="app-grid__label">Photos</p>
-					</div>
+					<section class="app-modal clock" id="clockModal">
+						<p>Boilerplate text</p>
+					</section>
+					<section class="app-modal photos" id="photosModal">
+						<p class="photos__date">Today</p>
+						<div class="photos__image-grid">
+							<div class="photos__img-container">
+								<img
+									class="photos__image--portrait"
+									src="https://images.pexels.com/photos/15327232/pexels-photo-15327232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+								/>
+							</div>
+							<div class="photos__img-container">
+								<img
+									class="photos__image--portrait"
+									src="https://images.pexels.com/photos/5914932/pexels-photo-5914932.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+								/>
+							</div>
+							<div class="photos__img-container">
+								<img
+									class="photos__image--portrait"
+									src="https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+								/>
+							</div>
+							<div class="photos__img-container">
+								<img
+									class="photos__image--portrait"
+									src="https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+								/>
+							</div>
+							<div class="photos__img-container">
+								<img
+									class="photos__image--landscape"
+									src="https://images.pexels.com/photos/325521/pexels-photo-325521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+								/>
+							</div>
+							<div class="photos__img-container">
+								<img
+									class="photos__image--landscape"
+									src="https://images.pexels.com/photos/751046/pexels-photo-751046.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+								/>
+							</div>
+							<div class="photos__img-container">
+								<img
+									class="photos__image--portrait"
+									src="https://images.pexels.com/photos/3402697/pexels-photo-3402697.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+								/>
+							</div>
+						</div>
+					</section>
+					<section class="app-modal phone" id="phoneModal">
+						<div class="phone__input-display"></div>
+						<div class="phone__buttons">
+							<button>1</button>
+							<button>2</button>
+							<button>3</button>
+							<button>4</button>
+							<button>5</button>
+							<button>6</button>
+							<button>7</button>
+							<button>8</button>
+							<button>9</button>
+							<button>*</button>
+							<button>0</button>
+							<button>#</button>
+							<button class="phone__buttons--call">📞</button>
+							<button class="phone__buttons--back">x</button>
+						</div>
+					</section>
+					<section class="app-modal messages" id="messagesModal">
+						<p>Boilerplate text</p>
+					</section>
+					<section class="app-modal calculator" id="calculatorModal">
+						<p>Boilerplate text</p>
+					</section>
+					<section class="app-modal settings" id="settingsModal">
+						<p>Boilerplate text</p>
+					</section>
 				</div>
 			</div>
 			<div class="bottom-display">
@@ -63,47 +135,20 @@
 					<a href="https://icons8.com/">Icons8</a>
 				</div>
 				<div class="app-grid app-grid--bottom">
-					<div class="app-grid__app">
-						<img
-							class="app-grid__icon"
-							src="./../assets/icons8-phone.svg"
-						/>
+					<div class="app-grid__app" id="phone">
+						<img class="app-grid__icon" src="./../assets/icons8-phone.svg" />
 						<p class="app-grid__label">Phone</p>
 					</div>
-					<section class="app-modal phone">
-						<li>1</li>
-						<li>3</li>
-						<li>3</li>
-						<li>4</li>
-						<li>5</li>
-						<li>6</li>
-						<li>7</li>
-						<li>8</li>
-						<li>9</li>
-						<li>*</li>
-						<li>0</li>
-						<li>#</li>
-						<li>📞</li>
-					</section>
-					<div class="app-grid__app">
-						<img
-							class="app-grid__icon"
-							src="./../assets/icons8-messages.svg"
-						/>
+					<div class="app-grid__app" id="messages">
+						<img class="app-grid__icon" src="./../assets/icons8-messages.svg" />
 						<p class="app-grid__label">Messages</p>
 					</div>
-					<div class="app-grid__app">
-						<img
-							class="app-grid__icon"
-							src="./../assets/icons8-calculator.svg"
-						/>
+					<div class="app-grid__app" id="calculator">
+						<img class="app-grid__icon" src="./../assets/icons8-calculator.svg" />
 						<p class="app-grid__label">Calculator</p>
 					</div>
-					<div class="app-grid__app">
-						<img
-							class="app-grid__icon"
-							src="./../assets/icons8-settings.svg"
-						/>
+					<div class="app-grid__app" id="settings">
+						<img class="app-grid__icon" src="./../assets/icons8-settings.svg" />
 						<p class="app-grid__label">Settings</p>
 					</div>
 				</div>
