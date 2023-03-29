@@ -2,16 +2,22 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<link rel="stylesheet" href="css/lock-screen.css" />
-		<script src="javascript/script.js" defer></script>
+		<script
+			src="javascript/date-and-time.js"
+			defer
+		></script>
 		<title>Fake OS</title>
 	</head>
-	<body onload="updateDate(); updateTime()">
+	<body>
 		<main>
 			<div class="top-row">
 				<p>📶 Optus</p>
@@ -19,23 +25,33 @@
 				<p>100% &#128267;</p>
 			</div>
 			<div class="date-and-time">
-				<span class="date-and-time__date"></span>
-				<span class="date-and-time__time"></span>
+				<span
+					class="date-and-time__date"
+				></span>
+				<span
+					class="date-and-time__time"
+				></span>
 			</div>
-			<div class="bottom-text"><p>Press home to unlock</p></div>
+			<div class="bottom-text">
+				<p>Press home to unlock</p>
+			</div>
 		</main>
 		<div class="home-bar">
-			<p class="home-bar__arrows home-bar__arrows--left">
+			<p
+				class="home-bar__arrows home-bar__arrows--left"
+			>
 				&#8594;
 			</p>
-			<a class="home-bar__link" href="html/home.html"
+			<a
+				class="home-bar__link"
+				href="html/home.html"
 				><div class="home-bar__btn"></div
 			></a>
-			<p class="home-bar__arrows home-bar__arrows--right">←</p>
+			<p
+				class="home-bar__arrows home-bar__arrows--right"
+			>
+				←
+			</p>
 		</div>
-		<script>
-			setInterval(updateDate, 1000);
-			setInterval(updateTime, 1000);
-		</script>
 	</body>
 </html>
