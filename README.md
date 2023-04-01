@@ -2,6 +2,8 @@
 
 This was a project I worked on as part of my Full-Stack training through Nology. The goal was to create a Single Page Application that looked like the operating system of our choice. I designed a fake Apple iOS, so this project should be viewed at either iPhone or iPad screen sizes. Modals were to be used to simulate apps inside the operating system, and vanilla Javascript was used for interactivity. I also decided to make some of the applications functional, these apps were: Notes, Calculator and Phone (although naturally the Phone app has some limitations). The other apps contain placeholder text and images.
 
+The project can be viewed at: https://cwills18.github.io/Fake-OS/
+
 In this project, I learnt how to:
 - Create a complex SPA using HTML, CSS and Javascript.
 - Create and style a live time and date element and update it automatically using setInterval.
