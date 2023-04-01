@@ -230,9 +230,112 @@ main {
 	}
 }
 
+.notes {
+	@extend %default-display;
+	width: 98%;
+	margin: auto;
+	margin-top: 1%;
+	height: calc(100vh - 4em);
+	justify-content: flex-start;
+	background-color: rgb(237, 237, 237);
+	&__header-row {
+		@extend %default-display;
+		width: 100%;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		padding: 15px;
+		& h1 {
+			@extend %default-display;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			align-content: baseline;
+			margin: 0px 15px;
+			& img {
+				width: 1em;
+				margin-right: 2px;
+			}
+		}
+	}
+	&__note-container {
+		width: 100%;
+		margin-top: 1.5em;
+		overflow: visible;
+		overflow-y: auto;
+	}
+	&__item {
+		width: 80%;
+		height: 3em;
+		margin: auto;
+		background-color: white;
+		border-radius: 10px;
+		margin-bottom: 10px;
+		overflow: hidden;
+		padding: 5px 10px 12px;
+		text-align: left;
+	}
+}
+
+.create-new-note {
+	z-index: 10;
+	flex-direction: column;
+	&__header-row {
+		display: flex;
+		flex-direction: row;
+		align-items: baseline;
+		justify-content: space-between;
+		padding: 15px;
+		color: rgb(228, 176, 31);
+	}
+	&__note-constructor {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&--title {
+			width: 80%;
+			height: 5vh;
+			border: none;
+			padding: 0px 5px;
+			font-family: $default;
+			font-size: 1.2em;
+			font-weight: 800;
+		}
+		&--body {
+			width: 80%;
+			height: 70vh;
+			border: none;
+			padding: 5px 5px 0px;
+			font-family: $default;
+			font-size: 1em;
+		}
+	}
+}
+
+.expanded-note-page {
+	z-index: 20;
+	background-color: white;
+	flex-direction: column;
+	text-align: left;
+	&__header-row {
+		display: flex;
+		flex-direction: row;
+		align-items: baseline;
+		justify-content: space-between;
+		padding: 15px;
+		color: rgb(228, 176, 31);
+	}
+	& h4 {
+		padding: 15px 15px 15px;
+	}
+	& p {
+		padding: 0px 15px;
+	}
+}
+
 .weather {
 	@extend %default-display;
+	width: 98%;
 	margin: auto;
+	margin-top: 1%;
 	background-color: rgb(197, 233, 248);
 	&__location {
 		font-size: 2em;
@@ -256,6 +359,9 @@ main {
 	justify-content: flex-start;
 	overflow: hidden;
 	background-color: white;
+	width: 98%;
+	margin: auto;
+	margin-top: 1%;
 	&__date {
 		@extend %default-display;
 		width: 90%;
@@ -265,12 +371,12 @@ main {
 		font-weight: 700;
 	}
 	&__image-grid {
-		width: 90%;
+		width: 100%;
 		height: calc(100vh - 4em);
 		display: inline-block;
 		display: grid;
 		grid-template-columns: 33% 33% 33%;
-		grid-template-rows: repeat(4, 28vw);
+		grid-template-rows: repeat(4, 33vw);
 		grid-gap: 0.2em;
 	}
 	&__img-container {
@@ -281,7 +387,7 @@ main {
 	&__image {
 		&--portrait {
 			width: 100%;
-			object-position: 0px -50px;
+			object-position: 0px -40px;
 		}
 		&--landscape {
 			height: 100%;
@@ -289,8 +395,27 @@ main {
 	}
 }
 
+.app-store {
+	@extend %default-display;
+	width: 98%;
+	margin: auto;
+	margin-top: 1%;
+	&__img-container {
+		width: 100%;
+		overflow: visible;
+		overflow-y: auto;
+		padding-bottom: 4em;
+		& img {
+			width: 100%;
+		}
+	}
+}
+
 .phone {
 	@extend %default-display;
+	width: 98%;
+	margin: auto;
+	margin-top: 1%;
 	justify-content: flex-start;
 	height: calc(100vh - 4em);
 	&__input-display {
@@ -318,6 +443,125 @@ main {
 			background-color: rgb(40, 208, 40);
 			font-size: 100%;
 			grid-column-start: 2;
+		}
+	}
+}
+
+.messages {
+	@extend %default-display;
+	width: 98%;
+	margin: auto;
+	margin-top: 1%;
+	justify-content: flex-start;
+	& img {
+		width: 100%;
+	}
+}
+
+.calculator {
+	@extend %default-display;
+	width: 98%;
+	margin: auto;
+	margin-top: 1%;
+	justify-content: flex-end;
+	padding-bottom: 4em;
+	background-color: rgb(18, 18, 18);
+	&__display {
+		@extend %default-display;
+		flex-flow: row nowrap;
+		justify-content: flex-end;
+		align-items: flex-end;
+		height: 25%;
+		width: 90%;
+		@media only screen and (min-width: 431px) {
+			width: 386px;
+		}
+		& p {
+			color: white;
+			font-size: 4em;
+			padding: 10px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			direction: ltr;
+		}
+	}
+	&__keypad {
+		// height: 60%;
+		width: 90%;
+		display: grid;
+		grid-template-columns: 20% 20% 20% 20%;
+		grid-column-gap: 6.8%;
+		grid-template-rows: 18vw 18vw 18vw 18vw 18vw;
+		grid-row-gap: 6.12vw;
+		@media only screen and (min-width: 431px) {
+			width: 386px;
+			grid-template-columns: 80px 80px 80px 80px;
+			grid-column-gap: 22px;
+			grid-template-rows: 80px 80px 80px 80px 80px;
+			grid-row-gap: 22px;
+			justify-content: center;
+		}
+		& button {
+			border: none;
+			font-size: 2em;
+		}
+		&--top {
+			background-color: rgb(174, 174, 174);
+			color: rgb(62, 62, 62);
+			border-radius: 50%;
+		}
+		&--operators {
+			background-color: orange;
+			color: white;
+			border-radius: 50%;
+		}
+		&--nums {
+			background-color: rgb(62, 62, 62);
+			color: white;
+			border-radius: 50%;
+		}
+		&--zero-keypad {
+			background-color: rgb(62, 62, 62);
+			color: white;
+			grid-column-start: 1;
+			grid-column-end: 3;
+			grid-row-start: 5;
+			border-radius: 40px;
+		}
+		&--zero-text {
+			font-size: 2em;
+			color: white;
+			align-self: center;
+			grid-column-start: 1;
+			grid-column-end: 2;
+			grid-row-start: 5;
+		}
+	}
+}
+
+.settings {
+	@extend %default-display;
+	width: 98%;
+	margin: auto;
+	margin-top: 1%;
+	&__header-row {
+		@extend %default-display;
+		width: 100%;
+		padding: 15px;
+		border-bottom: 1px solid rgb(191, 191, 191);
+		& p {
+			font-size: 1em;
+			font-weight: 700;
+		}
+	}
+	&__img-container {
+		width: 100%;
+		overflow: visible;
+		overflow-y: auto;
+		padding-bottom: 4em;
+		& img {
+			width: 100%;
 		}
 	}
 }
