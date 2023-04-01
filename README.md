@@ -10,7 +10,7 @@ In this project, I learnt how to:
 - Create modals inside of modals (see the Notes app)
 - Create a variety of Javascript functions to store user input, display it to the screen and remove elements that were no longer necessary or had been deleted by the user.
 - Create and use Javascript modules, including importing and exporting necessary functions between different files, for best separation of concerns.
-- Refactor and reorganise my code at the end of the project to make sure it was dry
+- Refactor and reorganise my code throughout the project to make sure it was dry
 
 Some of the challenges I overcame:
 - In this project, I learnt the importance of making sure all my javascript files had been saved before viewing the live version. Definitely wasted a bit of time troubleshooting problems that were only problems because one file hadn't saved properly.
