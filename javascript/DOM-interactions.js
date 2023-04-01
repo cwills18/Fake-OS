@@ -2,8 +2,8 @@ import { openAppModal, closeAppModal } from "./DOM-supporter-functions.js";
 
 const notesApp = document.querySelector("#notes");
 const weatherApp = document.querySelector("#weather");
-const clockApp = document.querySelector("#clock");
 const photosApp = document.querySelector("#photos");
+const appStoreApp = document.querySelector("#appStore");
 const phoneApp = document.querySelector("#phone");
 const messagesApp = document.querySelector("#messages");
 const calculatorApp = document.querySelector("#calculator");
@@ -16,11 +16,11 @@ notesApp.addEventListener("click", () => {
 weatherApp.addEventListener("click", () => {
 	openAppModal("#weatherModal");
 });
-clockApp.addEventListener("click", () => {
-	openAppModal("#clockModal");
-});
 photosApp.addEventListener("click", () => {
 	openAppModal("#photosModal");
+});
+appStoreApp.addEventListener("click", () => {
+	openAppModal("#appStoreModal");
 });
 phoneApp.addEventListener("click", () => {
 	openAppModal("#phoneModal");

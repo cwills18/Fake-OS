@@ -1,7 +1,4 @@
-import {
-	displayArrowAnimation,
-	removeArrowAnimation,
-} from "./arrow-animations.js";
+import { displayArrowAnimation, removeArrowAnimation } from "./arrow-animations.js";
 
 export const createTextNode = (tag, text) => {
 	const textNode = document.createElement(tag);
@@ -26,4 +23,9 @@ export const closeAppModal = () => {
 		targetApp.classList.remove("open-modal");
 		targetApp.style.display = "none";
 	}, 250);
+};
+
+export const resetToMainModal = (openModal) => {
+	openModal.classList.remove("open-modal");
+	openModal.style.display = "none";
 };
