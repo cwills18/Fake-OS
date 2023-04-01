@@ -3,14 +3,14 @@
 This was a project I worked on as part of my Full-Stack training through Nology. The goal was to create a Single Page Application that looked like the operating system of our choice. I designed a fake Apple iOS, so this project should be viewed at either iPhone or iPad screen sizes. Modals were to be used to simulate apps inside the operating system, and vanilla Javascript was used for interactivity. I also decided to make some of the applications functional, these apps were: Notes, Calculator and Phone (although naturally the Phone app has some limitations). The other apps contain placeholder text and images.
 
 In this project, I learnt how to:
-- Create a complex SPA using HTML, CSS and Javascript
-- Create and style a live time and date element and update it automatically using setInterval
-- Stack elements on top of each other to create border animations in CSS
-- Simulate the appearance of an app opening and closing using a combination of CSS animations and Javascript DOM interactions to add and remove classes
-- Create modals inside of modals (see the Notes app)
+- Create a complex SPA using HTML, CSS and Javascript.
+- Create and style a live time and date element and update it automatically using setInterval.
+- Stack elements on top of each other to create border animations in CSS.
+- Simulate the appearance of an app opening and closing using a combination of CSS animations and Javascript DOM interactions to add and remove classes.
+- Create modals inside of modals (see the Notes app).
 - Create a variety of Javascript functions to store user input, display it to the screen and remove elements that were no longer necessary or had been deleted by the user.
 - Create and use Javascript modules, including importing and exporting necessary functions between different files, for best separation of concerns.
-- Refactor and reorganise my code throughout the project to make sure it was dry
+- Refactor and reorganise my code throughout the project to make sure it was dry.
 
 Some of the challenges I overcame:
 - In this project, I learnt the importance of making sure all my javascript files had been saved before viewing the live version. Definitely wasted a bit of time troubleshooting problems that were only problems because one file hadn't saved properly.
